@@ -165,15 +165,14 @@ export default function App() {
             </p>
           </div>
 
-          {/* Right Logo Placeholder (CSS approximation of Telangana Rising) */}
+          {/* Right Logo */}
           <div className="flex-shrink-0 hidden md:flex flex-col items-center justify-center w-24">
-            <div className="relative flex flex-col items-center">
-              <span className="text-6xl font-black text-[#003366] tracking-tighter leading-none" style={{ WebkitTextStroke: '1px white' }}>1</span>
-              <div className="text-[10px] font-bold text-center leading-none mt-1">
-                <span className="text-[#003366]">TELANGANA</span><br/>
-                <span className="text-[#ff0000]">RISING</span>
-              </div>
-            </div>
+            <img 
+              src="https://i.ibb.co/27Nh29rK/telangana-rising.png" 
+              alt="Telangana Rising Logo" 
+              className="w-20 h-20 md:w-24 md:h-24 object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </div>
       </header>
