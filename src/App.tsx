@@ -70,6 +70,12 @@ export default function App() {
             setTimeout(() => {
               setStep('result');
               fireConfetti();
+              // Log the fooled user
+              fetch('/api/fooled', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ htno, semester }),
+              }).catch(console.error);
             }, 800);
             return prev;
           }
