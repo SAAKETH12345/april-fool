@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, AlertCircle, Share2, RefreshCw, GraduationCap, Landmark } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import Admin from './Admin';
 
 type Step = 'form' | 'loading' | 'result';
 
@@ -19,7 +20,7 @@ const LOADING_MESSAGES = [
   "Generating result card..."
 ];
 
-export default function App() {
+function PrankPage() {
   const [step, setStep] = useState<Step>('form');
   const [htno, setHtno] = useState('');
   const [semester, setSemester] = useState('8');
@@ -40,7 +41,7 @@ export default function App() {
     setCaptcha(`${num1} + ${num2} = ?`);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -393,4 +394,11 @@ export default function App() {
       </footer>
     </div>
   );
+}
+
+export default function App() {
+  if (window.location.pathname === '/admin-victims-list') {
+    return <Admin />;
+  }
+  return <PrankPage />;
 }
